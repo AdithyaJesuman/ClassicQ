@@ -26,7 +26,7 @@ class RockDB:
 
     def query(self, sql: str, parse_dates: list[str] | None = None) -> pd.DataFrame:
         self._ensure_connected()
-        return pd.read_sql(sql, self._con, parse_dates=parse_dates)
+        return pd.read_sql(sql,self._con, parse_dates=parse_dates) # type: ignore
 
     def tables(self) -> list[str]:
         self._ensure_connected()
